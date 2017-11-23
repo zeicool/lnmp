@@ -42,13 +42,13 @@ P.S 如果某一步骤失败, 再来一次。(因为你懂的原因，pecl.php.n
 -------------------
 
 ```bash
-  $ docker run -h feehi -p 80:80 -p 22:22 -p 3306:3306 -p 6379:6379 --name feehi -itd -v $PWD/etc/nginx:/etc/nginx -v $PWD/data/mysql:/mysql -v $PWD/data/log:/var/log -v /e:/work name/subname
+  $ docker run -h centos -p 80:80 -p 22:22 -p 3306:3306 -p 6379:6379 --name centos -itd -v $PWD/etc/nginx:/etc/nginx -v $PWD/data/mysql:/mysql -v $PWD/data/log:/var/log -v e:/upupw/htdocs:/home/wwwroot registry.cn-hangzhou.aliyuncs.com/liufee/feehi:latest
 ```
  P.S 
  
  1. $PWD为当前运行docker run的目录，可传入绝对地址。
  
- 2. 把e:/换成代码路径，或者传入多个项目的地址，修改/etc/nginx/site.d中的document_root地址
+ 2. 把e:/upupw/htdocs换成代码路径，或者传入多个项目的地址，修改/etc/nginx/site.d中的document_root地址
 
 
 注意
