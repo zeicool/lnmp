@@ -102,11 +102,11 @@ RUN echo -e "#!/bin/sh \n\
             MYSQL_PASSWORD='123456' \n\
         fi \n\
         /usr/sbin/mysqld --initialize \n\
-        MYSQLOLDPASSWORD=\`awk -F \"localhost: \" '/A temporary/{print \$2}' /var/log/mysqld.log\` \n\
+        MYSQLOLDPASSWORD=\`awk -F \"127.0.0.1: \" '/A temporary/{print \$2}' /var/log/mysqld.log\` \n\
         /usr/sbin/mysqld & \n\
         echo -e \"[client] \\\n  password=\"\${MYSQLOLDPASSWORD}\" \\\n user=root\" > ~/.my.cnf \n\
         sleep 5s \n\
-        /usr/bin/mysql --connect-expired-password -e \"set password=password('\$MYSQL_PASSWORD');update mysql.user set host='%' where user='root' && host='localhost';flush privileges;\" \n\
+        /usr/bin/mysql --connect-expired-password -e \"set password=password('\$MYSQL_PASSWORD');update mysql.user set host='%' where user='root' && host='127.0.0.1';flush privileges;\" \n\
         echo -e \"[client] \\\n  password=\"\${MYSQL_PASSWORD}\" \\\n user=root\" > ~/.my.cnf \n\
     else \n\
         /usr/sbin/mysqld \n\
