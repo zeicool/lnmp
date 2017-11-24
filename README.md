@@ -42,7 +42,7 @@ P.S 如果某一步骤失败, 再来一次。(因为你懂的原因，pecl.php.n
 -------------------
 
 ```bash
-  $ docker run -h centos -p 80:80 -p 22:22 -p 3306:3306 -p 6379:6379 --name centos -itd -v $PWD/etc/nginx:/etc/nginx -v $PWD/data/mysql:/mysql -v $PWD/data/log:/var/log -v e:/upupw/htdocs:/home/wwwroot registry.cn-hangzhou.aliyuncs.com/liufee/feehi:latest
+  $ docker run -h centos -p 80:80 -p 22:22 -p 3306:3306 -p 6379:6379 --name centos -itd -v $PWD/etc/nginx:/etc/nginx -v $PWD/data/mysql:/mysql -v $PWD/data/log:/var/log -v e:/upupw/htdocs:/home/wwwroot name/subname
 ```
  P.S 
  
